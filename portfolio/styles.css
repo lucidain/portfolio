@@ -15,8 +15,9 @@ header, footer, section {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-header h1 {
+header h1, header p {
     margin: 0;
+    text-align: center;
 }
 
 img {
@@ -25,7 +26,7 @@ img {
     margin-top: 0.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1000px) {
     body {
         grid-template-columns: 1fr 3fr 1fr;
         grid-template-areas:
@@ -41,12 +42,26 @@ img {
     main {
         grid-area: main;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+        "experience interests"
+        "experience game";
         gap: 1rem;
     }
 
     #experience, #interests, #game {
         grid-column: span 2;
+    }
+
+    #experience {
+        grid-area: experience;
+    }
+
+    #interests {
+        grid-area: interests;
+    }
+    
+    #game {
+        grid-area: game;
     }
 
     footer {
